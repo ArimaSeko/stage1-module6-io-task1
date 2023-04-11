@@ -13,11 +13,9 @@ public class FileReader {
         boolean wr = false;
         int startRow =0;
         int endRow=0;
-        FileInputStream fis = null;
         char[] charr=null;
-        try {
+        try (FileInputStream fis = new FileInputStream(file)){
             charr = new char[(int) file.length()];
-            fis = new FileInputStream(file);
             int ch =fis.read();
             int i =0;
             while(ch!=-1){
@@ -26,9 +24,9 @@ public class FileReader {
                 i++;
             }
         } catch (FileNotFoundException e) {
-            System.out.println("filenotfound");
+            e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("ioex");
+            e.printStackTrace();
         }
         String data = String.valueOf(charr);
         Profile prof = new Profile();
