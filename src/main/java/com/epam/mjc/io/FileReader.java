@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 public class FileReader {
 
     public Profile getDataFromFile(File file) {
+        
         int Age ;
         long Phone;
         String Name;
@@ -51,8 +52,7 @@ public class FileReader {
         int end = text.indexOf("\n");
         if(start>-1)
             answer =text.substring(start+find.length() ,end);
-        else
-            System.err.println("String not found!");
+       
         return answer;
     }
 }
