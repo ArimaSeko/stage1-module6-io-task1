@@ -5,7 +5,7 @@ import java.io.*;
 
 public class FileReader {
 
-    public Profile getDataFromFile(File file) throws IOException {
+    public Profile getDataFromFile(File file) {
         int Age ;
         long Phone;
         String Name;
