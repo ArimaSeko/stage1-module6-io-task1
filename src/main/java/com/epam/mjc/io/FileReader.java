@@ -1,6 +1,7 @@
 package com.epam.mjc.io;
 
 import java.io.*;
+import java.util.logging.Logger;
 
 
 public class FileReader {
@@ -51,7 +52,7 @@ public class FileReader {
         if(start>-1)
             answer =text.substring(start+find.length() ,end);
         else
-            System.out.println("string not found");
+            System.err.println("String not found!");
         return answer;
     }
 }
